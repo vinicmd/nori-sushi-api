@@ -3,7 +3,7 @@
   "description": "Infrastructure made for Nori Sushi.",
   "version": "1.0.0",
   "private": true,
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "author": "Vinicius Duarte",
   "repository": {
