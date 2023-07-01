@@ -4,8 +4,11 @@ import {Orders} from './app/useCases/orders'
 import {Products} from './app/useCases/products'
 import {Categories} from './app/useCases/categories'
 import {alive} from './app/useCases/alive'
+import {checkHeaders} from './utils/checkHeaders'
 
 export const router = Router()
+
+router.use(checkHeaders)
 
 // it's alive!
 router.get('/', alive)
@@ -57,3 +60,10 @@ router.put('/orders/:orderId', Orders.editOrder)
 
 // delete order
 router.delete('/orders/:orderId', Orders.deleteOrder)
+
+// default route
+router.get('*', function (req, res) {
+  const headers = req.headers
+  console.log(headers)
+  return res.sendStatus(404)
+})
