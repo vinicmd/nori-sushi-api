@@ -1,5 +1,6 @@
 export const mongoUrl = (): string => {
-  return process.env.DEVELOPMENT_MODE
+  const idDevelopment = process.env.DEVELOPMENT_MODE
+  return idDevelopment
     ? 'mongodb://localhost:27017'
     : `${process.env.MONGO_URL}`
 }
