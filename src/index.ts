@@ -5,8 +5,6 @@ import 'dotenv/config'
 import {router} from './routes'
 import {mongoUrl} from './utils/mongoUrl'
 
-console.log(mongoUrl())
-
 mongoose
   .connect(mongoUrl())
   .then(() => {
