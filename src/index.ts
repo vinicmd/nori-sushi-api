@@ -16,4 +16,4 @@ mongoose
 
     app.listen(port, () => console.log(`Server is running at port ${port}`))
   })
-  .catch(() => console.log('Connection error'))
+  .catch((error: unknown) => console.log('Connection error:', error))
