@@ -5,8 +5,12 @@ import {Products} from './app/useCases/products'
 import {Categories} from './app/useCases/categories'
 import {alive} from './app/useCases/alive'
 import {checkHeaders} from './utils/checkHeaders'
+import {noContent} from './app/useCases/noContent'
 
 export const router = Router()
+
+router.get('/favicon.ico', noContent)
+router.get('/robots.txt', noContent)
 
 router.use(checkHeaders)
 
@@ -61,9 +65,7 @@ router.put('/orders/:orderId', Orders.editOrder)
 // delete order
 router.delete('/orders/:orderId', Orders.deleteOrder)
 
-// default route
+// default routes
 router.get('*', function (req, res) {
-  const headers = req.headers
-  console.log(headers)
   return res.sendStatus(404)
 })
