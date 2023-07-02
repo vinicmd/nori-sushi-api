@@ -8,7 +8,7 @@ export const Order = model(
       required: true,
     },
     contributor: {
-      type: Number,
+      type: String,
       required: false,
     },
     status: {
