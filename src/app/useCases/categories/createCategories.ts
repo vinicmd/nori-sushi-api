@@ -3,9 +3,9 @@ import {Category} from '../../models/Category'
 
 export async function createCategories(req: Request, res: Response) {
   try {
-    const {icon, name} = req.body
+    const {icon, name, order} = req.body
 
-    const category = await Category.create({icon, name})
+    const category = await Category.create({icon, name, order})
 
     res.status(201).json(category)
   } catch (error) {
