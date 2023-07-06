@@ -8,6 +8,7 @@ export async function listOrders(req: Request, res: Response) {
       .populate('products.product')
       .where('status')
       .equals(`${status ? status : 'OPEN'}`)
+      .sort({createdAt: -1})
 
     res.json(orders)
   } catch (error) {
