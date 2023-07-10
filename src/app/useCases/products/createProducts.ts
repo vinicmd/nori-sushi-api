@@ -1,5 +1,6 @@
 import {Request, Response} from 'express'
 import {Product} from '../../models/Product'
+import {errorHandler} from '../../../utils/errorHandle'
 
 export async function createProduct(req: Request, res: Response) {
   try {
@@ -9,7 +10,6 @@ export async function createProduct(req: Request, res: Response) {
 
     res.status(201).json(product)
   } catch (error) {
-    console.error(error)
-    res.sendStatus(400)
+    errorHandler(req, res, 500, error as Error)
   }
 }

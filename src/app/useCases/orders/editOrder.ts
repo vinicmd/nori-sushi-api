@@ -1,5 +1,6 @@
 import {Request, Response} from 'express'
 import {Order} from '../../models/Order'
+import {errorHandler} from '../../../utils/errorHandle'
 
 export async function editOrder(req: Request, res: Response) {
   try {
@@ -19,8 +20,6 @@ export async function editOrder(req: Request, res: Response) {
 
     res.status(204).json(order)
   } catch (error) {
-    console.error(error)
-    console.log(error)
-    res.sendStatus(400)
+    errorHandler(req, res, 500, error as Error)
   }
 }

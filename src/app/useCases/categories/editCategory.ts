@@ -1,5 +1,6 @@
 import {Request, Response} from 'express'
 import {Category} from '../../models/Category'
+import {errorHandler} from '../../../utils/errorHandle'
 
 export async function editCategory(req: Request, res: Response) {
   try {
@@ -14,7 +15,6 @@ export async function editCategory(req: Request, res: Response) {
 
     res.sendStatus(204)
   } catch (error) {
-    console.error(error)
-    res.sendStatus(500)
+    errorHandler(req, res, 500, error as Error)
   }
 }

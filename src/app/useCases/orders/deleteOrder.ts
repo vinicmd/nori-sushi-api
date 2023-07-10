@@ -1,5 +1,6 @@
 import {Request, Response} from 'express'
 import {Order} from '../../models/Order'
+import {errorHandler} from '../../../utils/errorHandle'
 
 export async function deleteOrder(req: Request, res: Response) {
   try {
@@ -9,8 +10,6 @@ export async function deleteOrder(req: Request, res: Response) {
 
     res.sendStatus(204)
   } catch (error) {
-    console.error(error)
-    console.log(error)
-    res.sendStatus(400)
+    errorHandler(req, res, 500, error as Error)
   }
 }

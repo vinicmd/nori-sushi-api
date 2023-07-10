@@ -1,5 +1,6 @@
 import {Request, Response} from 'express'
 import {Order} from '../../models/Order'
+import {errorHandler} from '../../../utils/errorHandle'
 
 export async function listOrders(req: Request, res: Response) {
   const {status} = req.body
@@ -12,7 +13,6 @@ export async function listOrders(req: Request, res: Response) {
 
     res.json(orders)
   } catch (error) {
-    console.error(error)
-    res.sendStatus(500)
+    errorHandler(req, res, 500, error as Error)
   }
 }

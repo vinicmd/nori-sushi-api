@@ -1,5 +1,6 @@
 import {Request, Response} from 'express'
 import {Category} from '../../models/Category'
+import {errorHandler} from '../../../utils/errorHandle'
 
 export async function createCategories(req: Request, res: Response) {
   try {
@@ -9,7 +10,6 @@ export async function createCategories(req: Request, res: Response) {
 
     res.status(201).json(category)
   } catch (error) {
-    console.error(error)
-    res.sendStatus(500)
+    errorHandler(req, res, 500, error as Error)
   }
 }
