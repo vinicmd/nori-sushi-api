@@ -1,11 +1,11 @@
 import {Router} from 'express'
 
-import {Orders} from './app/useCases/orders'
-import {Products} from './app/useCases/products'
-import {Categories} from './app/useCases/categories'
 import {alive} from './app/useCases/alive'
 import {checkHeaders} from './utils/checkHeaders'
 import {noContent} from './app/useCases/noContent'
+import * as Categories from './app/useCases/categories'
+import * as Products from './app/useCases/products'
+import * as Orders from './app/useCases/orders'
 
 export const router = Router()
 
@@ -66,6 +66,6 @@ router.put('/orders/:orderId', Orders.editOrder)
 router.delete('/orders/:orderId', Orders.deleteOrder)
 
 // default routes
-router.get('*', function (req, res) {
+router.get('*', function (_, res) {
   return res.sendStatus(404)
 })

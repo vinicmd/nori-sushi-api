@@ -1,11 +1,4 @@
-import {createProduct} from './createProducts'
-import {deleteProduct} from './deleteProduct'
-import {editProduct} from './editProduct'
-import {listProducts} from './listProducts'
-
-export const Products = {
-  createProduct,
-  deleteProduct,
-  editProduct,
-  listProducts,
-}
+export {createProduct} from './createProducts'
+export {deleteProduct} from './deleteProduct'
+export {editProduct} from './editProduct'
+export {listProducts} from './listProducts'
