@@ -13,6 +13,6 @@ export async function createOrder(req: Request, res: Response) {
 
     res.status(201).json(order)
   } catch (error) {
-    errorHandler(req, res, 500, error as Error)
+    errorHandler(req, res, 400, error as Error)
   }
 }

@@ -10,7 +10,7 @@ export function checkHeaders(req: Request, res: Response, next: NextFunction) {
       message: 'Forbidden path.',
       name: 'forbidden',
     }
-    return errorHandler(req, res, 403, error)
+    return errorHandler(req, res, 401, error)
   }
   next()
 }

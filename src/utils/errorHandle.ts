@@ -23,7 +23,7 @@ export async function errorHandler(
       method: 'GET',
     })
   } catch (error) {
-    errorHandler(req, res, 500, error as Error)
+    errorHandler(req, res, 503, error as Error)
   } finally {
     res.sendStatus(statusCode)
   }

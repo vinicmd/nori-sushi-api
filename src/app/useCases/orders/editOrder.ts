@@ -20,6 +20,6 @@ export async function editOrder(req: Request, res: Response) {
 
     res.status(204).json(order)
   } catch (error) {
-    errorHandler(req, res, 500, error as Error)
+    errorHandler(req, res, 400, error as Error)
   }
 }

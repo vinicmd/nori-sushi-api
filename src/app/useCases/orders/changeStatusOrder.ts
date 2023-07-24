@@ -11,6 +11,6 @@ export async function changeStatusOrder(req: Request, res: Response) {
 
     res.sendStatus(204)
   } catch (error) {
-    errorHandler(req, res, 500, error as Error)
+    errorHandler(req, res, 400, error as Error)
   }
 }

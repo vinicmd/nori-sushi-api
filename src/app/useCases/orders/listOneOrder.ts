@@ -12,6 +12,7 @@ export async function listOneOrder(req: Request, res: Response) {
 
     res.json(order)
   } catch (error) {
-    errorHandler(req, res, 500, error as Error)
+    console.log(error)
+    errorHandler(req, res, 404, error as Error)
   }
 }
