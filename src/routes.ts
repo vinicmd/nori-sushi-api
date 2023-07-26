@@ -6,6 +6,7 @@ import {noContent} from './app/useCases/noContent'
 import * as Categories from './app/useCases/categories'
 import * as Products from './app/useCases/products'
 import * as Orders from './app/useCases/orders'
+import {multerController} from './app/controller/multerController'
 
 export const router = Router()
 
@@ -30,10 +31,18 @@ router.put('/categories/:categoryId', Categories.editCategory)
 router.get('/products', Products.listProducts)
 
 // create products
-router.post('/products', Products.createProduct)
+router.post(
+  '/products',
+  multerController.single('image'),
+  Products.createProduct,
+)
 
 // edit products
-router.put('/products/:productId', Products.editProduct)
+router.put(
+  '/products/:productId',
+  multerController.single('image'),
+  Products.editProduct,
+)
 
 // delete products
 router.delete('/products/:productId', Products.deleteProduct)

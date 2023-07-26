@@ -15,5 +15,24 @@ export const Product = model(
       type: Schema.Types.ObjectId,
       required: true,
     },
+    isBuffet: {
+      type: Boolean,
+      default: false,
+    },
+    type: {
+      type: String,
+      enum: [
+        'APPETIZER',
+        'URAMAKI',
+        'HOT',
+        'HOSOMAKI',
+        'GULKAN',
+        'NIGUIRI',
+        'PREMIUM',
+      ],
+    },
+    imagePath: {
+      type: String,
+    },
   }),
 )
