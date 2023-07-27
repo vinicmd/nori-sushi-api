@@ -20,8 +20,8 @@ export async function uploadImageService(file?: Express.Multer.File) {
     const upload = await cloudinary.uploader.upload(
       path,
       {
-        public_id: nameResolver(originalname, true, false),
-        folder: process.env.NODE_ENV,
+        public_id: nameResolver(originalname, false, false),
+        folder: process.env.NODE_ENV || 'development',
       },
       function (error) {
         fs.unlinkSync(path)
