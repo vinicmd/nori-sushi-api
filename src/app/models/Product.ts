@@ -33,6 +33,8 @@ export const Product = model(
     },
     imagePath: {
       type: String,
+      default:
+        'https://res.cloudinary.com/norisushi/image/upload/v1690469570/production/noImage_fhqe51.jpg',
     },
   }),
 )
