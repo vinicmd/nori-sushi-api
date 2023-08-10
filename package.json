@@ -1,7 +1,7 @@
 {
   "name": "norisushi-backend",
   "description": "Infrastructure made for Nori Sushi.",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "private": true,
   "main": "dist/index.js",
   "license": "MIT",
@@ -28,6 +28,7 @@
     "multer": "1.4.5-lts.1"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.4.1",
     "@types/cors": "2.8.13",
     "@types/express": "4.17.17",
     "@types/multer": "1.4.7",
